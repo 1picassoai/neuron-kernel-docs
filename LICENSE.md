@@ -1,8 +1,8 @@
 Mirror-Code Limited Use License (Non-Commercial)
-Copyright (c) 2026 [Your Name/Project Name]. All Rights Reserved.
+Copyright (c) 2026 Neuron Kernel. All Rights Reserved.
 
 1. Grant of License
-Subject to the terms of this Agreement, the Copyright Holder hereby grants you a non-exclusive, non-transferable, royalty-free license to download and run the Mirror-Code Neuron Kernel (the "Software") in containerized form strictly for local, non-production, and evaluative purposes.
+Subject to the terms of this Agreement, the Copyright Holder hereby grants you a non-exclusive, non-transferable, royalty-free license to download and run the Mirror-Code Neuron Kernel (the "Software") in containerized form strictly for **local, non-production, and evaluative purposes**.
 
 2. Restrictions
 You shall not, and shall not permit any third party to:
