@@ -12,14 +12,21 @@ To try out the engine on your local machine (Mac/Linux/Windows), follow these st
 
 ### Execution
 1. Create a directory for persistent data:
-   `mkdir -p ~/mirror-data`
+   `mkdir -p ~/mirror-data && chmod 777 ~/mirror-data`
 2. docker pull picassoai/neuron-kernel:v1.2
 3. Launch the kernel:
    ```bash
-   docker run -d --name mirror-node -p 8080:8080 \
-     -e OPTS="-Xmx4g -Xms4g" \
-     -v ~/mirror-data:/app/data \
-     picassoai/neuron-kernel:v1.2
+  docker run -d \
+  --name mirror-node \
+  --restart unless-stopped \
+  -p 8080:8080 \
+  -e OPTS="-Xmx4g -Xms4g" \
+  -v ~/mirror-data:/app/data \
+  --health-cmd="curl -f http://localhost:8080/state/health || exit 1" \
+  --health-interval=10s \
+  --health-retries=3 \
+  picassoai/neuron-kernel:v1.2
+4. Finally run - `docker inspect --format='{{json .State.Health.Status}}' mirror-node`
 
 ###🛠 API Interface
 Once the node is running, you can interact with the engine via REST.
