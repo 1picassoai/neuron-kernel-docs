@@ -67,13 +67,13 @@ class MirrorKernelTool(Tool):
         return response.status_code
 
 # 2. Initialize the Infrastructure Agent
-```simulation_agent = Agent(
+simulation_agent = Agent(
     role="Infrastructure Shadow Controller",
     goal="Maintain 100% state parity between local and cloud nodes.",
     backstory="You are an autonomous auditor for Synthetic 2026 Workloads.",
     tools=[MirrorKernelTool()],
     verbose=True
-)```
+)
 
 # 3. Define and Execute
 sync_task = Task(
