@@ -52,15 +52,16 @@ curl http://localhost:8080/state
 from agent_sdk import Agent, Task, Tool
 import requests
 
+# Example: Agentic SDK Integration
+from agent_sdk import Agent, Task, Tool
+import requests
+
 # 1. Define the Mirror-Code Tool
 class MirrorKernelTool(Tool):
     name = "kernel_state_sync"
     description = "Synchronizes agent logic with the high-fidelity state engine."
 
     def _run(self, payload: dict):
-        """
-        Payload must contain: id, status, data, step
-        """
         url = "http://localhost:8080/state"
         response = requests.post(url, json=payload)
         return response.status_code
@@ -74,14 +75,12 @@ simulation_agent = Agent(
     verbose=True
 )
 
-# 3. Define the Agentic Task
+# 3. Define and Execute
 sync_task = Task(
     description="Analyze the current simulation step and sync with the kernel.",
     agent=simulation_agent,
     expected_output="A '200 OK' synchronization confirmation."
 )
-
-# 4. Execute (Agent handles the JSON schema automatically)
 simulation_agent.execute(sync_task)
 
 # How the Agent Interacts with your Engine
