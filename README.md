@@ -15,7 +15,6 @@ To try out the engine on your local machine (Mac/Linux/Windows), follow these st
    `mkdir -p ~/mirror-data && chmod 777 ~/mirror-data`
 2. docker pull picassoai/neuron-kernel:v1.2
 3. Launch the kernel:
-   ```bash
   docker run -d \
   --name mirror-node \
   --restart unless-stopped \
