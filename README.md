@@ -48,10 +48,6 @@ GET /state (Retrieve State)
 Retrieves the current committed state from the engine.
 curl http://localhost:8080/state
 
-# Example: Agentic SDK Integration for Mirror-Code
-from agent_sdk import Agent, Task, Tool
-import requests
-
 # Example: Agentic SDK Integration
 from agent_sdk import Agent, Task, Tool
 import requests
